@@ -42,7 +42,7 @@ SHIM="firefox"
 
 #curl -o firefox.deb -L https://sourceforge.net/projects/ubuntuzilla/files/mozilla/apt/pool/main/f/firefox-mozilla-build/firefox-mozilla-build_63.0.1-0ubuntu1_amd64.deb/download
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
-apt-get update
+apt-get $APT_OPTIONS update | indent
 apt-get install -y firefox
 
 mkdir -p $BUILD_DIR/.apt
